@@ -1,0 +1,486 @@
+/* RESET */
+body,
+p,
+h1,
+ul,
+li,
+blockquote {
+  padding: 0;
+  margin: 0px;
+}
+
+body {
+  font-family: "Volkorn", Georgia, serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+/*  ============================ GRID GERAL */
+
+.estrutura {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "header"
+    "citacao"
+    "sobre"
+    "contato"
+    "footer" 
+  ;
+}
+
+/*  ============================  HEADER */
+
+.header {
+  grid-area: header;
+  background: url(/assets/img/SistemaSolar-header.png) center/cover no-repeat;
+  width: 100%;
+  height: 350px;
+}
+
+.sticky {
+  padding-bottom: 20px;
+  background: linear-gradient(135deg, #7e7e7e, #0f0f0f);
+}
+
+.logo {
+  max-width: 100px;
+  margin-left: 40px;
+  margin-top: 25px;
+}
+
+.menu-nav { 
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+display: flex;
+justify-content: space-between;
+z-index: 100;
+transition: 0.6s;
+}
+
+.header nav ul {
+  display: flex;
+  margin-top: 25px;
+  margin-right: 40px;
+}
+
+.header nav li a {
+  display: block;
+  padding: 10px;
+  color: rgb(197, 197, 197);
+  font-size: 1.125em;
+  background: rgba(170, 167, 167, 0.1);
+  border-radius: 5px;
+  transition: 0.1s;
+}
+
+.header nav li a:hover {
+  background: rgba(182, 182, 182, 0.5);
+}
+
+.header li+li {
+  margin-left: 30px;
+}
+
+
+
+/* ==================================== CITAÇÃO */
+
+.citacao {
+  grid-area: citacao;
+  background-color: #272626;
+
+}
+
+.citacao span {
+  display: block;
+  background-color: #707070;
+  width: 241px;
+  height: 1px;
+  margin: 40px auto;
+}
+
+.citacao p {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  color: #707070;
+  margin: 30px 0 30px 0;
+}
+
+
+/* ======================== SOBRE */
+
+.sobre {
+  grid-area: sobre;
+  background: #000000;
+  padding: 10px 70px 70px 90px;
+
+}
+
+.sobre h2 {
+  color: #707070;
+  text-align: center;
+  margin: 40px 0 30px 0;
+}
+
+
+
+/*   ----------- CAIXA */
+
+.caixa {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 3fr 1fr 6fr);
+  grid-gap: 5px;
+  transition: 0.3s ease-out;
+}
+
+
+/* ---------------- */
+
+.caixa p {
+  color: #707070;
+}
+
+.info-opacity {
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-out;
+}
+
+.active-opacity {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icone-de-informacao {
+  max-height: 40px;
+  cursor: grab;
+}
+
+.icone-de-informacao img {
+  max-width: 20px;
+
+}
+
+.img-circulos {
+  min-width: 100px;
+  border: solid 1px #707070;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+}
+
+.img-circulos:hover {
+  background: #131313;
+}
+
+
+
+/* ----------------------- CAIXA-2 */
+
+.caixa-2 {
+  margin: 0 auto;
+  transition: 0.3s ease-out;
+}
+
+.caixa-2 h3 {
+  color: #707070;
+  text-align: center;
+  margin-top: 0;
+}
+
+.IMAGEM-GRANDE {
+  max-width: 455px;
+  border: solid 1px #707070;
+}
+
+.img-icon-fechar {
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease-out;
+}
+
+.icone-de-fechar {
+  max-width: 30px;
+}
+
+
+.desativar {
+  display: none;
+}
+
+.item p {
+  max-width: 455px;
+  margin: 10px auto;
+  color: #707070;
+}
+
+.item {
+  /* display: none; */
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  transform: translate3d(-50px, 0, 0);
+}
+
+.active-img-grande {
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  transition: .3s;
+  transform: translate3d(0px, 0, 0);
+}
+
+
+
+/* ============================ CONTATOS */
+
+.contato {
+  grid-area: contato;
+  padding: 80px 0 70px 0;
+  background-color: #272626;
+}
+
+.contato h2 {
+  color: #707070;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form input {
+  background-color: #272626;
+  color: #616161;
+  width: 266px;
+  height: 46px;
+  padding-left: 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  border: solid 3px #5A5A5A;
+  margin-right: 10px;
+}
+
+.form a {
+  display: flex;
+  background: #5A5A5A;
+  font-size: 16px;
+  width: 123px;
+  height: 38px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #acacac;
+  transition: 0.2s ease-out;
+}
+
+.form a:hover {
+  color: #5A5A5A;
+  background: #acacac;
+  box-shadow: 5px 5px 15px 0px rgba(75, 75, 75, 0.15);
+}
+
+
+
+/*  ---------------------------- FOOTER */
+
+.footer {
+  grid-area: footer;
+  padding: 60px 60px 70px 60px;
+  background: linear-gradient(135deg, #707070, #616161);
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+}
+
+.redes a {
+  padding: 10px;
+  margin: 20px;
+}
+
+.redes a:hover {
+  background-color: #616161;
+  border-radius: 5px;
+}
+
+.dev {
+  border-top: solid 1px #9E9E9E;
+}
+
+.footer p {
+  color: #9E9E9E;
+  text-align: center;
+  padding: 20px 0 0 0;
+}
+
+
+/*  ---------------------------- BOTÃO VOLTAR AO TOP */
+
+.voltar-top {
+  background-color: #707070;
+  box-shadow: 3px 3px 10px 0px rgba(3, 3, 3, 3);
+  width: 30px;
+  height: 50px;
+  border-radius: 50px;
+  position: relative;
+  transition: 0.2s ease-out;
+
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  position: fixed;
+  z-index: 100;
+}
+
+
+.voltar-top:hover {
+  background-color: #979797;
+}
+
+.voltar-top::before {
+  content: '⇧';
+  top: 15px;
+  right: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  animation: seta .7s ease-in 0s infinite alternate;
+}
+
+@keyframes seta {
+  from {
+    top: 20px;
+  }
+
+  to {
+    top: 10px;
+  }
+}
+/* ------------------------------------------MEDIA MOBILE---------------------------------  MEDIA MOBILE */
+/* ------------------------------------------MEDIA MOBILE---------------------------------  MEDIA MOBILE */
+/* ------------------------------------------MEDIA MOBILE---------------------------------  MEDIA MOBILE */
+/* ------------------------------------------MEDIA MOBILE---------------------------------  MEDIA MOBILE */
+/*   -------- MEDIA */
+
+@media (max-width: 970px) { 
+  .caixa { 
+    grid-template: repeat(6, 1fr) / repeat(2, 3fr 1fr 6fr);
+  }
+}
+
+
+@media (max-width: 665px) { 
+
+  .sticky {
+    padding-bottom: 15px;
+  }
+
+  .logo { 
+    max-width: 70px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .header nav ul {
+    margin-top: 15px;
+    margin-right: 20px;
+  }
+  
+  .header nav li a {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .header li+li {
+    margin-left: 10px;
+  }
+
+  .citacao p {
+    max-width: 250px;
+    font-size: 12px;
+    margin: 0 auto;
+  }
+
+  .citacao span {
+    display: block;
+    background-color: #707070;
+    width: 141px;
+    height: 1px;
+    margin: 20px auto;
+  }
+
+  .sobre { 
+    padding: 10px;
+  }
+
+  .caixa { 
+    grid-template-columns: 70px 20px 140px;
+    justify-content: center;
+  }
+
+  .caixa p {
+    font-size: 12px;
+  }
+
+  .img-circulos { 
+    min-width: 70px;
+  }
+
+  .img-circulos img {
+    width: 70px;
+  }
+
+  .IMAGEM-GRANDE {
+    max-width: 290px;
+  }
+
+  .item p {
+    max-width: 280px;
+    font-size: 12px;
+  }
+
+    /*-- MOBILE -------contato- */
+  .form {
+    flex-direction: column;
+  }
+  .form a { 
+    margin-top: 10px;
+  }
+  .form input { 
+    margin-right: 0px;
+  }
+
+  .footer p {
+    font-size: 12px;
+  }
+
+  .voltar-top::before {
+    top: 15px;
+    right: 7.5px;
+  }
+  
+}
+
+
